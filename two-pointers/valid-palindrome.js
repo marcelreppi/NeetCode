@@ -6,10 +6,12 @@ var isPalindrome = function (s) {
   return solveByTwoPointers(s)
 }
 
+/**
+ * Strategy: One pointer at start, one at end. Skip all characters except letters and numbers. If the characters both pointers point at are unequal then it is not a palindrome. Continue until you meet in the middle.
+ * Time: O(n)
+ * Space: O(1)
+ */
 function solveByTwoPointers(s) {
-  // Time: O(n)
-  // Space: O(1)
-
   let l = 0
   let r = s.length - 1
 

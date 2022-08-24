@@ -9,16 +9,21 @@ var isAnagram = function (s, t) {
   return compareSortedStrings(s, t)
 }
 
+/**
+ * Strategy: Sort the letters of both words. If the outcome is equal then they are an anagram.
+ * Time: O(s+t)
+ * Space: O(1)
+ */
 function compareSortedStrings(s, t) {
-  // Time: O(s+t)
-  // Space: O(1)
   return s.split("").sort().join("") === t.split("").sort().join("")
 }
 
+/**
+ * Strategy: Count letters in both words. If both counts match in every letter then they are an anagram.
+ * Time: O(s+t)
+ * Space: O(s+t) 
+*/
 function compareLetterCounts(s, t) {
-  // Time: O(s+t)
-  // Space: O(s+t)
-
   const getLetterCounts = (s) => {
     return s.split("").reduce((counts, c) => {
       if (counts[c] !== undefined) {
